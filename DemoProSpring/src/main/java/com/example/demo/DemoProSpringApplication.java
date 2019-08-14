@@ -4,11 +4,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class DemoProSpringApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoProSpringApplication.class, args);
+		/*
+		 * User use=ctx.getBean(User.class); use.show();
+		 */
+		
 	}
 
 }

@@ -15,6 +15,11 @@ public class WelcomeController {
 		return service.welcomeRetrive();
 	}
 	
+	@RequestMapping("/Fetch")
+	public String Index() {
+		return "Display.jsp";
+	}
+	
 	@Component
 	class WelcomeService{
 		public String welcomeRetrive() {
