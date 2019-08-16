@@ -16,8 +16,7 @@ Set<String> specialties;
 
 
 	public JavaTrainer() {
-	super();
-	// TODO Auto-generated constructor stub
+	
 }
 
 
@@ -29,8 +28,11 @@ Set<String> specialties;
 	
 
 	@Override
-	public void train() {
-		System.out.println(name+"is a java Trainer");
+	public void train() throws Exception {
+		if (Math.random()<0.5) 
+			System.out.println(name + "is a java Trainer");
+			else
+				throw new Exception();
 
 	}
 	

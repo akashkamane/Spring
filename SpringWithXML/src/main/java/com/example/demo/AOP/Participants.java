@@ -8,7 +8,7 @@ public class Participants {
 	String technology;
 	
 	
-	public void takeSeat() {
+	public void takeSeats() {
 		System.out.println("Taking seat");
 	}
 	public void switchOffPhones() {

@@ -14,7 +14,7 @@
  				http://www.springframework.org/schema/tx
  				http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
  				
- 				<bean id="coreJavaCourse" class="com.spring.demo.CoreJavaCourse">
+ 			<!-- 	<bean id="coreJavaCourse" class="com.spring.demo.CoreJavaCourse">
  				<constructor-arg value="80"/>
  				<constructor-arg>
  				<list>
@@ -24,7 +24,7 @@
  				<value>CollectionS</value>
  				</list></constructor-arg>
  				<constructor-arg value="1000"/> 
- 				</bean>
+ 				</bean> -->
  				
 	 				
  				
@@ -39,9 +39,9 @@
  				</list></constructor-arg>
  				<constructor-arg  type="double" value="1000"/>
  				
- 				</bean> -->
- 				
- 				 <!-- <bean id="coreJavaCourse" class="com.spring.demo.CoreJavaCourse">
+ 				</bean>
+ 				 -->
+ 				 <bean id="coreJavaCourse" class="com.spring.demo.CoreJavaCourse">
  				<constructor-arg type="1" value="80"/>
  				<constructor-arg>
  				<list>
@@ -51,14 +51,14 @@
  				<value>CollectionS</value>
  				</list></constructor-arg>
  				<constructor-arg  index="2" value="1000"/>
- 				</bean> -->
+ 				</bean>
  				 
  				 <bean id="advancedJavaCourse" class="com.spring.demo.AdvancedJavaCourse">
  				<constructor-arg value="80"/>
  				<constructor-arg>
  				<list>
  				<value>RMI</value>
- 				<value>Servlets</value>
+ 				<value>Servlet</value>
  				<value>JDBC</value>
  				<value>JSP</value>
  				</list></constructor-arg>
@@ -97,12 +97,41 @@
  				</list> 
  				</property>
  				
+ 				<property name="courseTrainers">
+ 				<map>
+ 				<entry key-ref="coreJavaCourse" value-ref="Akash"/>
+ 				<entry key-ref="advancedJavaCourse" value-ref="Deven"/>
+ 				</map> 
+ 				</property>
+ 				
  				</bean>
  				
  				<bean id="trainingWorkshop" class="com.spring.demo.TrainingWorkshop"
  					p:trainingCompany-ref="mikado"/>
  				
- 				
+ 			<!-- <bean id="participants" class="com.spring.demo.Participants" />
+ 			<aop:config>
+ 			<aop:aspect ref="participants">
+ 			<aop:before pointcut="execution(*com.spring.demo.JavaTrainer.train(..))" method="takeSeat"/>
+ 			<aop:before pointcut="execution(*com.spring.demo.JavaTrainer.train(..))" method="switchOffPhones"/>
+ 			<aop:after-returning pointcut="execution(*com.spring.demo.JavaTrainer.train(..))" method="applaud"/>
+ 			<aop:after-throwing pointcut="execution(*com.spring.demo.JavaTrainer.train(..))" method="claimRefund"/>
+ 			</aop:aspect>
+ 			</aop:config> -->	
+ 			
+ 			<!-- <bean id="participants" class="com.spring.demo.Participants" />
+ 			<aop:config>
+ 			<aop:aspect ref="participants">
+ 			<aop:pointcut id="training" expression="execution(* com.spring.demo.JavaTrainer.train(..))"/>
+ 			<aop:before pointcut-ref="training" method="takeSeats"/>
+ 			<aop:before pointcut-ref="training" method="switchOffPhones"/>
+ 			<aop:after-returning pointcut-ref="training" method="applaud"/>
+ 			<aop:after-throwing pointcut-ref="training" method="claimRefund"/>
+ 		
+ 			</aop:aspect>
+ 			</aop:config>
+ 			 -->
+ 			
  				
  				
  				</beans>

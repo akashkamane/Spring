@@ -4,7 +4,7 @@ import java.util.Set;
 
 public interface Trainer {
 	
-	public void train();
+	public void train()throws Exception;
 	public Set<String> getSpecialties();
 
 }

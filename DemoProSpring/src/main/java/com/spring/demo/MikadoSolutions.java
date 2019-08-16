@@ -15,6 +15,7 @@ public class MikadoSolutions implements TrainingCompany {
 	static MikadoSolutions mikado;
 	@Autowired
 	List<Trainer> trainers;
+	@Autowired
 	Set<Course> courses;
 	
 	
@@ -37,7 +38,12 @@ public class MikadoSolutions implements TrainingCompany {
 				while(it.hasNext()) {
 					Trainer trainer=it.next();
 					System.out.println(trainer);
-					trainer.train();
+					try {
+						trainer.train();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						//System.out.println(e);
+					}
 					}
 	}
 	public List<Trainer> getTrainers() {
