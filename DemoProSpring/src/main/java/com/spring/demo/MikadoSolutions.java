@@ -2,23 +2,36 @@ package com.spring.demo;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 
 
 public class MikadoSolutions implements TrainingCompany {
-	@Autowired
+	//@Autowired
 	static MikadoSolutions mikado;
-	@Autowired
+	//@Autowired
 	List<Trainer> trainers;
-	@Autowired
+	//@Autowired
 	Set<Course> courses;
+	//@Autowired
+	Map<Course,Trainer> courseTrainers;
 	
 	
+	public static MikadoSolutions getMikado() {
+		return mikado;
+	}
+	public static void setMikado(MikadoSolutions mikado) {
+		MikadoSolutions.mikado = mikado;
+	}
+	public Map<Course, Trainer> getCourseTrainers() {
+		return courseTrainers;
+	}
+	public void setCourseTrainers(Map<Course, Trainer> courseTrainers) {
+		this.courseTrainers = courseTrainers;
+	}
 	private MikadoSolutions() {
 	}
 	public static MikadoSolutions getMikadoSolutions() {
@@ -31,8 +44,7 @@ public class MikadoSolutions implements TrainingCompany {
 	
 
 
-	@Override
-	@Autowired
+	//@Autowired
 	public void conductTraining() {				
 				Iterator<Trainer> it = trainers.iterator();
 				while(it.hasNext()) {
@@ -41,7 +53,7 @@ public class MikadoSolutions implements TrainingCompany {
 					try {
 						trainer.train();
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
+						
 						//System.out.println(e);
 					}
 					}
@@ -58,7 +70,7 @@ public class MikadoSolutions implements TrainingCompany {
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}
-	@Override
+	
 	public String toString() {
 		return "MikadoSolutions is a training company";
 	}

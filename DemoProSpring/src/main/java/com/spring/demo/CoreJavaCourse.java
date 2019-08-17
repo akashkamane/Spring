@@ -2,15 +2,18 @@ package com.spring.demo;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope(value="prototype")
+//@Component
+//@Scope(value="prototype")
 public class CoreJavaCourse implements Course {
-	
+	//@Autowired
 	List<String> courseContents;
+	//@Autowired
 	int courseDuration;
+	//@Autowired
 	double courseFees;
 	public CoreJavaCourse() {
 		
@@ -39,7 +42,7 @@ public class CoreJavaCourse implements Course {
 	public void setCourseFees(double courseFees) {
 		this.courseFees = courseFees;
 	}
-	@Override
+	
 	public String toString() {
 		return "CoreJavaCourse " +courseContents+" duration is "+courseDuration+" Fees is "+courseFees;
 	}

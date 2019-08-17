@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class AndroidTrainer implements Trainer {
 	String name;
-	@Autowired
+	//@Autowired
 	Set<String> specialties;
 	
 
 
 		public AndroidTrainer() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

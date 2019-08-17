@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope(value="prototype")
+//@Component
+//@Scope(value="prototype")
 public class JavaTrainer implements Trainer {
-@Autowired
+//@Autowired
 String name;
-@Autowired
+//@Autowired
 Set<String> specialties;
 
 
@@ -27,7 +27,7 @@ Set<String> specialties;
 }
 	
 
-	@Override
+	
 	public void train() throws Exception {
 		if (Math.random()<0.5) 
 			System.out.println(name + "is a java Trainer");
@@ -59,7 +59,7 @@ Set<String> specialties;
 	}
 
 
-	@Override
+	
 	public String toString() {
 		return name+"is a JavaTrainer verygood";
 	}

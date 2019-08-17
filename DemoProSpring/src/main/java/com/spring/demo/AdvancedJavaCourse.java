@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class AdvancedJavaCourse implements Course {
-	@Autowired
+	//@Autowired
 	List<String> courseContents;
-	@Autowired
+	//@Autowired
 	int courseDuration;
-	@Autowired
+	//@Autowired
 	double courseFees;
 	public AdvancedJavaCourse() {
 		
