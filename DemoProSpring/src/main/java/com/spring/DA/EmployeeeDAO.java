@@ -3,8 +3,10 @@ package com.spring.DA;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.tree.RowMapper;
+import javax.swing.tree.TreePath;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 public class EmployeeeDAO {
@@ -36,8 +38,8 @@ public class EmployeeeDAO {
 	 */		 
 	
 	//Query For Multiple Object
-	public List<Employee> getAllEmployees(){
-		List<Employee> employees = jdbcTemplate.query("select * from employee", new RowMapper() {
+	public List<Map<String,Object>> getAllEmployees(){
+		List<Map<String, Object>> employees = jdbcTemplate.queryForList("select * from employee", new RowMapper() {
 			public Object mapRow(ResultSet rs,int rowNum)
 			{
 				System.out.println("Row Number =" +rowNum);
@@ -51,6 +53,12 @@ public class EmployeeeDAO {
 					System.out.println(e);
 				}
 				return employee;
+			}
+
+			@Override
+			public int[] getRowsForPaths(TreePath[] path) {
+				// TODO Auto-generated method stub
+				return null;
 			}
 		});
 				return employees;	
