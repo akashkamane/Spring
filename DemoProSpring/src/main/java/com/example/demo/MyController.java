@@ -14,19 +14,19 @@ public class MyController {
 		return "Display.jsp";
 	}
 	
-	/*
-	 * public ModelAndView User(String Name,String pass) {
-	 * 
-	 * ModelAndView mv=new ModelAndView();
-	 * 
-	 * Second s=new Second();
-	 * 
-	 * String str=s.printName();
-	 * 
-	 * 
-	 * return mv;
-	 * 
-	 * }
-	 */
+	
+	  public ModelAndView User(String Name,String pass) {
+	  
+	  ModelAndView mv=new ModelAndView();
+	  
+	  Second s=new Second();
+	  
+	  String str=s.printName();
+	  
+	  
+	  return mv;
+	  
+	  }
+	 
 
 }
